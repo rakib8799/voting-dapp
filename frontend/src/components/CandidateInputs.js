@@ -30,7 +30,7 @@ function CandidateInputs() {
         </div>
         <div className="mt-6">
           <input
-            placeholder="Enter The Candidate's Address"
+            placeholder="Enter The Candidate's Account Address"
             className="w-full h-16 px-4 bg-slate-100 "
             ref={address}
           />
