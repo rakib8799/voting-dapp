@@ -11,16 +11,16 @@ function ElectionsList() {
     displayElections();
   }, [displayElections]);
   return (
-    <div className=" w-5/6 ml-10  ">
+    <div className=" w-[89%] ml-10  ">
       {isLoading ? (
         <Loading />
       ) : (
         <div>
           <div className="  mt-2 ">
-            <h1 className="text-4xl font-sans mt-10 ml-20 intro">
+            <h1 className="text-4xl font-sans mt-10 ml-12 intro">
               Hello Voter
             </h1>
-            <p className="text-1xl font-sans mt-2 ml-20 intro">
+            <p className="text-1xl font-sans mt-2 ml-12 intro">
               Start Voting in the listed elections that are active
             </p>
           </div>
@@ -31,7 +31,7 @@ function ElectionsList() {
                   <img
                     src={voterpic}
                     alt="candidatesdemopic"
-                    className=" object-fill  h-20 mt-12  ml-36 "
+                    className=" object-fill  h-20 mt-12  ml-8"
                     key={`${key}-img`}
                   />
                   <ElectionList

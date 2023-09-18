@@ -1,6 +1,6 @@
 function Intro() {
   return (
-    <div className=" ml-2 py-5">
+    <div className="ml-16 py-5">
       <h1 className=" mt-24 text-3xl font-mono font-light text-gray-800 w-2/4 text-center intro">
         Start a Safe & Secure Election within minutes
       </h1>

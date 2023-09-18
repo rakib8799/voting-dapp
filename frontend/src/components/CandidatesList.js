@@ -11,7 +11,7 @@ function CandidatesList(props) {
   }, [displayCandidatesInfo]);
 
   return (
-    <div className=" w-full ml-10 ">
+    <div className=" w-[91%] ml-5 ">
       <div className="  mt-2 ">
         <h1 className="text-4xl font-sans mt-10 ml-20 intro">
           {props.greeting}

@@ -5,7 +5,7 @@ function CandidateList(props) {
   return (
     <div className=" w-full">
       <div className=" mt-12 ml-20 w-full">
-        <div className="mt-6 w-full h-20 px-4 bg-slate-50 flex justify-evenly rounded-lg shadow-md shadow-slate-300">
+        <div className="mt-6 w-full h-20 px-1 bg-slate-50 flex justify-evenly rounded-lg shadow-md shadow-slate-300">
           {' '}
           {props.isWinner === 'Y' && (
             <img src={resultpic} alt="resultpic" className="h-16 mt-2" />

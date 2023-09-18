@@ -9,7 +9,7 @@ function HomeScreen() {
     <div>
       <Intro />
       <HomePic />
-      <div className="flex">
+      <div className="flex gap-5 ml-20">
         <Button
           content="Login as Organiser"
           path="/organizerdefault"

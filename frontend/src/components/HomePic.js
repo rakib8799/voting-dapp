@@ -5,7 +5,7 @@ function HomePic() {
       <img
         src={vote1}
         alt="Vote pic"
-        className="float-right object-fill h-[65vh]"
+        className="float-right object-fill h-[70vh]"
       />
     </div>
   );

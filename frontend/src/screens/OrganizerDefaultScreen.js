@@ -32,10 +32,10 @@ function OrganizerDefaultScreen() {
                     return (
                       <div className="w-5/6" key={key}>
                         <div className="  mt-2 ">
-                          <h1 className="text-4xl font-sans mt-10 ml-20 intro">
+                          <h1 className="text-4xl font-sans mt-10 ml-24 intro">
                             Hello Organizer
                           </h1>
-                          <p className="text-1xl font-sans mt-2 ml-20 intro">
+                          <p className="text-1xl font-sans mt-2 ml-24 intro">
                             Below are your elections. Results can be seen once
                             election is ended
                           </p>
@@ -60,12 +60,12 @@ function OrganizerDefaultScreen() {
                     );
                   }
                   return (
-                    <div className="w-5/6 " key={key}>
+                    <div className="w-[91%] " key={key}>
                       <div className=" m-auto flex w-full">
                         <img
                           src={organizerpic}
                           alt="organizer pic"
-                          className="  object-fill  h-20 mt-12 ml-32 "
+                          className="  object-fill  h-20 mt-12 ml-24 "
                         />
                         <ElectionList
                           id={key + 1}

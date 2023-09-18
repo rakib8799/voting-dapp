@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import VoterButton from './VoterButton';
 function ElectionList(props) {
   return (
-    <div className="w-full">
-      <div className=" mt-12 ml-20 w-full">
+    <div className="w-full ml-12">
+      <div className=" mt-12 w-full">
         <div className="mt-6 w-full h-20 px-4 bg-slate-50 flex justify-evenly rounded-lg shadow-md shadow-slate-300">
           <h1 className="mt-5 py-2  font-sans font-bold intro text-lg    text-gray-600">
             Id: <span className="text-blue-900 font-light">{props.id}</span>
