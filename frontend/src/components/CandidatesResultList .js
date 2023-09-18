@@ -11,7 +11,7 @@ function CandidatesResultList(props) {
   }, [displayCandidatesInfo]);
 
   return (
-    <div className=" w-5/6 ml-10 ">
+    <div className=" w-full ml-10 ">
       <div className="  mt-2 ">
         <h1 className="text-4xl font-sans mt-10 ml-20 intro">
           {props.greeting}
@@ -26,6 +26,7 @@ function CandidatesResultList(props) {
             <CandidateList
               name={candidate.name}
               address={candidate.address}
+              position={candidate.position}
               party={candidate.party}
               votes={candidate.votes}
               results={props.results}
@@ -38,7 +39,7 @@ function CandidatesResultList(props) {
             <img
               src={votingpic}
               alt="voting pic"
-              className="  object-fill  h-20 ml-40  mt-12 "
+              className="  object-fill  h-20 ml-24  mt-12 "
               key={`${key}-img`}
             />
           </div>

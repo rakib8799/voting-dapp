@@ -36,7 +36,7 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-between mr-48  text-center shadow-sm shadow-blue-300 rounded-md w-44 h-10 absolute top-8 right-0 ">
+    <div className="flex justify-between mr-28 text-center shadow-sm shadow-blue-300 rounded-md w-44 h-10 absolute top-8 right-0 ">
       <img
         src={login}
         alt="Login pic"

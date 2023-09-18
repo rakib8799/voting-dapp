@@ -13,10 +13,10 @@ function AddCandidatesScreen() {
         <img
           src={candidatespic}
           alt="candidatesdemopic"
-          className="  object-fill  h-96 mt-24 ml-52"
+          className="  object-fill  h-96 mt-24 ml-5"
         />
       </div>
-      <div className=" float-right  mr-60 mb-24">
+      <div className=" float-right mt-20  mr-60 mb-24">
         <NextPageButton
           content={"Next Step"}
           path="/organizerdefault/scheduleelection"

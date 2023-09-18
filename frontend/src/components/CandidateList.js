@@ -35,6 +35,9 @@ function CandidateList(props) {
             )}
           </h1>
           <h1 className="mt-4 py-2  font-sans font-light intro text-lg text-blue-900 ">
+            <span className="text-gray-600">Position:</span> {props.position}
+          </h1>
+          <h1 className="mt-4 py-2  font-sans font-light intro text-lg text-blue-900 ">
             <span className="text-gray-600">Party:</span> {props.party}
           </h1>
           {props.results && (

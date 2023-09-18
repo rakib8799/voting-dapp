@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { ABI } from './Abi';
 async function contractInstance() {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const contractAddress = '0xB34B51B3A2b92d92917d841C3e957889c32D589B';
+  const contractAddress = '0x93416a52e18009aF623AB60FEEb6ED2386c77B56';
   await provider.send('eth_requestAccounts', []);
   const signer = provider.getSigner();
   const signerAddress = await signer.getAddress();

@@ -17,6 +17,7 @@ const ResultsScreen = lazy(() => import('./screens/ResultsScreen'));
 
 export const AppContext = createContext();
 
+
 function App() {
   const [connectedAccount, setConnectedAccount] = useState('');
   const [organizersListMumbai, setOrganizersListMumbai] = useState([]);
@@ -29,6 +30,10 @@ function App() {
   const name = useRef('');
   const age = useRef(18);
   const address = useRef('');
+
+  const position = useRef('');
+
+
   const candidateParty = useRef('');
 
   return (
@@ -54,6 +59,7 @@ function App() {
           name,
           age,
           address,
+          position,
           candidateParty,
         }}
       >

@@ -142,6 +142,11 @@ export const ABI = [
       },
       {
         "internalType": "string",
+        "name": "position",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
         "name": "party",
         "type": "string"
       },
@@ -183,6 +188,11 @@ export const ABI = [
         "internalType": "address",
         "name": "candidateAddress",
         "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "position",
+        "type": "string"
       },
       {
         "internalType": "string",
@@ -306,6 +316,11 @@ export const ABI = [
       },
       {
         "internalType": "string",
+        "name": "_position",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
         "name": "_partyName",
         "type": "string"
       },
@@ -376,4 +391,4 @@ export const ABI = [
     "stateMutability": "nonpayable",
     "type": "function"
   }
-];
+]

@@ -1,4 +1,4 @@
-import { useContext, useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 import { AppContext } from '../App';
 import contractInstance from '../contractInstance';
 
@@ -23,7 +23,7 @@ export function useCandidatesList(forResults) {
         localStorage.setItem('highest', 0);
 
         for (let index = 0; index < length; index++) {
-          let { name, candidateAddress, party, votesGained } =
+          let { name, candidateAddress, position, party, votesGained } =
             await contract.displayCandidateResults(
               organizerSelected,
               organizerIdSelected - 1,
@@ -33,10 +33,11 @@ export function useCandidatesList(forResults) {
           if (votesGained.toNumber() >= winner) {
             localStorage.setItem('highest', votesGained.toNumber());
           }
-          console.log(name, candidateAddress, party);
+          console.log(name, candidateAddress, position, party);
           candidatesResultsList.push({
             name: name,
             address: candidateAddress,
+            position: position,
             party: party,
             votes: votesGained.toNumber(),
           });
@@ -45,7 +46,7 @@ export function useCandidatesList(forResults) {
       } else {
         let candidatesList = [];
         for (let index = 0; index < length; index++) {
-          let { name, candidateAddress, party } =
+          let { name, candidateAddress, position, party } =
             await contract.displayCandidateDetails(
               organizerSelected,
               organizerIdSelected - 1,
@@ -55,6 +56,7 @@ export function useCandidatesList(forResults) {
             candidatesList.push({
               name: name,
               address: candidateAddress,
+              position: position,
               party: party,
             });
           }

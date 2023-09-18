@@ -33,7 +33,7 @@ function OrganizerDefaultScreen() {
                       <div className="w-5/6" key={key}>
                         <div className="  mt-2 ">
                           <h1 className="text-4xl font-sans mt-10 ml-20 intro">
-                            Hello Organiser
+                            Hello Organizer
                           </h1>
                           <p className="text-1xl font-sans mt-2 ml-20 intro">
                             Below are your elections. Results can be seen once

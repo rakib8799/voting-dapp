@@ -1,13 +1,14 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.18;
 
-contract VotingDapp{
+contract VotingdAPP{
     uint id=1;
         struct  Candidate{
         uint candidateId;
         string candidateName;
         uint candidateAge;
         string partyName;
+        string candidatePosition;
         address candidateAddress;
         uint    votesRececieved;
     }
@@ -74,13 +75,14 @@ contract VotingDapp{
                 ended=   organizerElections[_organizer][_id].electionEnded;
                 return (started,ended);
     }
-    function setCandidate(string memory _name, uint _age, string memory _partyName, address _address, address _organizer,uint _id) public isElectionOrganizer(_organizer){
+    function setCandidate(string memory _name, uint _age, string memory _position, string memory _partyName, address _address, address _organizer,uint _id) public isElectionOrganizer(_organizer){
         require(! organizerElections[_organizer][_id].candidateExists[_address],"Already candidate exists");
         Candidate storage candidate=  organizerElections[_organizer][_id].candidates[_address];
         id=id+1;
         candidate.candidateId=id;
         candidate.candidateName=_name;
         candidate.candidateAge=_age;
+        candidate.candidatePosition=_position;
         candidate.partyName=_partyName;
         candidate.candidateAddress=_address;
        organizerElections[_organizer][_id].allCandidateAddresses.push(_address);
@@ -100,21 +102,23 @@ contract VotingDapp{
         emit voterVotedEvent(msg.sender,"Voter has voted");
     }
 
-      function displayCandidateDetails(address _organizer,uint _id, uint _index) public view returns(string memory name , address candidateAddress, string memory party,  uint totalCandidates ){
+      function displayCandidateDetails(address _organizer,uint _id, uint _index) public view returns(string memory name , address candidateAddress, string memory position, string memory party,  uint totalCandidates ){
          address [] memory allCandidates=  organizerElections[_organizer][_id].allCandidateAddresses;  
          name= organizerElections[_organizer][_id].candidates[allCandidates[_index]].candidateName;
          candidateAddress=  organizerElections[_organizer][_id].candidates[allCandidates[_index]].candidateAddress;
+         position= organizerElections[_organizer][_id].candidates[allCandidates[_index]].candidatePosition;
          party=  organizerElections[_organizer][_id].candidates[allCandidates[_index]].partyName;
          totalCandidates=allCandidates.length;
-          return (name, candidateAddress,party,totalCandidates); 
+          return (name, candidateAddress, position, party,totalCandidates); 
     }
-    function displayCandidateResults(address _organizer,uint _id, uint _index) public view  electionHasEnded(_organizer,_id) returns (string memory name , address candidateAddress, string memory party, uint votesGained, uint totalCandidates){
+    function displayCandidateResults(address _organizer,uint _id, uint _index) public view  electionHasEnded(_organizer,_id) returns (string memory name , address candidateAddress, string memory position, string memory party, uint votesGained, uint totalCandidates){
         address [] memory allCandidates=  organizerElections[_organizer][_id].allCandidateAddresses;  
          name= organizerElections[_organizer][_id].candidates[allCandidates[_index]].candidateName;
          candidateAddress=  organizerElections[_organizer][_id].candidates[allCandidates[_index]].candidateAddress;
+         position= organizerElections[_organizer][_id].candidates[allCandidates[_index]].candidatePosition;
          party=  organizerElections[_organizer][_id].candidates[allCandidates[_index]].partyName;
          votesGained= organizerElections[_organizer][_id].candidates[allCandidates[_index]].votesRececieved;
          totalCandidates=allCandidates.length;
-        return (name, candidateAddress,party,votesGained,totalCandidates); 
+        return (name, candidateAddress,position,party,votesGained,totalCandidates); 
     }
 }

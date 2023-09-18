@@ -8,7 +8,7 @@ function ElectionSchedule() {
       <div className="w-full ml-16 mb-16  text-center mt-40  ">
         <div className="  mt-2 ">
           <h1 className="text-4xl font-sans mt-10 ml-20 intro">
-            Dear Organiser
+            Dear Organizer
           </h1>
           <h2 className="text-2xl font-sans mt-10 ml-20 intro">
             You have added the candidates for your election

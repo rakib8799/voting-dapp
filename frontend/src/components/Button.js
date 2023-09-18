@@ -12,6 +12,7 @@ function Button(props) {
     organizersListSepolia,
     name,
     age,
+    position,
     address,
     candidateParty,
   } = useContext(AppContext);
@@ -61,7 +62,7 @@ function Button(props) {
       const organizerConnected = localStorage.getItem('connected address');
 
       let listSize = localStorage.getItem('listsize');
-      if (!name || !age || !candidateParty || !address) {
+      if (!name || !age || !position || !candidateParty || !address) {
         return toast.error('Kindly fill all details!', {
           position: toast.POSITION.TOP_CENTER,
         });
@@ -69,6 +70,7 @@ function Button(props) {
       console.log(
         name.current.value,
         age.current.value,
+        position.current.value,
         candidateParty.current.value,
         address.current.value,
         organizerConnected,
@@ -77,6 +79,7 @@ function Button(props) {
       const addCandidateTx = await contract.setCandidate(
         name.current.value,
         age.current.value,
+        position.current.value,
         candidateParty.current.value,
         address.current.value,
         organizerConnected,

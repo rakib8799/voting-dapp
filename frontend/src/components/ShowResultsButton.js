@@ -7,7 +7,7 @@ function ShowResultsButton(props) {
   const navigate = useNavigate();
   const { setCandidatesInfoList, setCurrentOrganizer } = useContext(AppContext);
   const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const contractAddress = "0xA93d975E0553dFbBE3921a0276547dcAE99C3193";
+  const contractAddress = "0x93416a52e18009aF623AB60FEEb6ED2386c77B56";
 
   function navigateTo() {
     navigate(props.path);
@@ -27,12 +27,13 @@ function ShowResultsButton(props) {
       const length = totalCandidates.toNumber();
       let candidatesList = [];
       for (let index = 0; index < length; index++) {
-        let { name, candidateAddress, party, votesGained } =
+        let { name, candidateAddress, position, party, votesGained } =
           await contract.displayCandidateDetails(props.organizer, index);
-        console.log(name, candidateAddress, party, votesGained);
+        console.log(name, candidateAddress, position, party, votesGained);
         candidatesList.push({
           name: name,
           address: candidateAddress,
+          position: position,
           party: party,
           votes: votesGained,
         });
